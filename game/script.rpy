@@ -1,6 +1,8 @@
 ﻿init python:
+    import os
+    from Python import test
     def mathFunction():
-        return 10*11
+        return os.path.dirname(os.path.realpath(__file__))
 # The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
@@ -28,7 +30,7 @@ label start:
 
     # These display lines of dialogue.
 
-    $ swag = mathFunction()
+    $ swag = test.jeffBridges()
 
     e "You've created [swag] new Ren'Py games."
 

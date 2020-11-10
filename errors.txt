@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 3: expected an indented block
-    return 10*11
-          ^
+File "game/script.rpy", line 2: invalid syntax
+    import "Python/test.py"
+                           ^
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov  9 18:10:34 2020
+Mon Nov  9 18:37:32 2020
