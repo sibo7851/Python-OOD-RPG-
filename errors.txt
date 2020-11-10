@@ -1,0 +1,11 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 3: expected an indented block
+    return 10*11
+          ^
+    
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Mon Nov  9 18:10:34 2020
