@@ -45,7 +45,7 @@ class ResourceFactory:
   
     def objectify(self, param): 
         self.Item.itemStats=param[1]
-        self.Item.itemName=param[0]
+        self.Item.itemName="Stone of "+param[0]
         self.Item.classType=ItemEnum(3)
         """change the message using translations"""
         return self.Item
@@ -69,5 +69,6 @@ if __name__ == "__main__":
     X=Stats()
     X.attack=10
     i =("curing",X)
-    O=f.objectify(i)
+    O=RareDecorator(f.objectify(i))
     print(O.itemStats.attack) 
+    print(O.itemName) 
