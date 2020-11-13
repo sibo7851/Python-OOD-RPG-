@@ -1,10 +1,6 @@
 ﻿init python:
     import os
-    from Python import itemFactory
-    from Python import inventory
-    from python import item
-    
-    inventory=inventory.createTestInventory()
+
 
     def mathFunction():
         return os.path.dirname(os.path.realpath(__file__))
@@ -58,11 +54,11 @@ init python:
             tutorials.append(self)
 
 
-    Section(_("Quickstart"))
+    Section(_("What would you like to do?"))
 
-    for i in set(inventory.getItems()):
-        
-        Tutorial("text", _(i.itemName+" ("+str(inventory.countItem(i))+")"))
+    Tutorial("tutorial_playing", _("Player Experience"))
+
+    Tutorial("inventoryMenu", _("Open Inventory"))
 
 
 screen tutorials(adj):
@@ -157,7 +153,7 @@ label tutorials:
         show eileen happy at center
         with move
 
-    $ reset_example()
+    #$ reset_example()
 
     call expression tutorial.label from _call_expression
 
