@@ -11,12 +11,12 @@ class WeaponFactory:
   
     def __init__(self): 
   
-        self.Item = Item()
+        self.Item = Weapon()
   
     def objectify(self, param): 
         self.Item.itemStats=param[1]
         self.Item.itemName="Sword of "+param[0]
-        self.Item.classType=ItemEnum(1)
+        self.Item.classType="Weapon"
         """change the message using translations"""
         return self.Item
   
@@ -26,12 +26,12 @@ class ConsumableFactory:
   
     def __init__(self): 
   
-        self.Item = Item()
+        self.Item = Consumable()
   
     def objectify(self, param): 
         self.Item.itemStats=param[1]*10
         self.Item.itemName="Potion of "+param[0]
-        self.Item.classType=ItemEnum(2)
+        self.Item.classType="Consumable"
         """change the message using translations"""
         return self.Item
 
@@ -41,12 +41,12 @@ class ResourceFactory:
   
     def __init__(self): 
   
-        self.Item = Item()
+        self.Item = Resource()
   
     def objectify(self, param): 
         self.Item.itemStats=param[1]
         self.Item.itemName="Stone of "+param[0]
-        self.Item.classType=ItemEnum(3)
+        self.Item.classType="Resource"
         """change the message using translations"""
         return self.Item
 
@@ -63,12 +63,5 @@ def Factory(weaponType ="Consumable"):
     return objectFactory[weaponType]() 
 
 #below is for testing, delete when working
-if __name__ == "__main__": 
+
   
-    f = Factory("Consumable") 
-    X=Stats()
-    X.attack=10
-    i =("curing",X)
-    O=RareDecorator(f.objectify(i))
-    print(O.itemStats.attack) 
-    print(O.itemName) 

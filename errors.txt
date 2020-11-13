@@ -2,10 +2,73 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 2: invalid syntax
-    import "Python/test.py"
-                           ^
-    
+File "game/itemText.rpy", line 30: expected statement.
+    example tags1 hide:
+                  ^
+
+File "game/itemText.rpy", line 41: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 47: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 51: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 55: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 62: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 69: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 74: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 79: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 87: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 93: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 98: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 105: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 114: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 120: expected statement.
+    example:
+           ^
+
+File "game/itemText.rpy", line 123: expected statement.
+    example showtrans:
+                     ^
+
+File "game/itemText.rpy", line 128: expected statement.
+    example:
+           ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov  9 18:37:32 2020
+Fri Nov 13 09:12:25 2020
