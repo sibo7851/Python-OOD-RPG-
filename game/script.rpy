@@ -15,8 +15,8 @@ init python:
     from pydblite import pydblite
 
     def DBTest():
-        db = pydblite.Base('dummy.pdl')
-        db.path="dummy.pdl"
+        db = pydblite.Base('/Users/Sid/Documents/RenProject/Gates of Galloo/dummy.pdl')
+        db.path=mathFunction()+"testDB.pdl"
         # create new base with field names
         db.create('name', 'age', 'size')
         # insert new record
@@ -70,7 +70,7 @@ init python:
 
     Section(_("What would you like to do?"))
 
-    Tutorial("tutorial_playing", _("Player Experience"))
+    Tutorial("wander", _("Wander Around"))
 
     Tutorial("inventoryMenu", _("Open Inventory"))
 
@@ -137,13 +137,13 @@ label start:
 
     window show
 
-    #$jones=DBTest()
+    $jones=mathFunction()
 
-    e "Hi! My name is Eileen, and I'd like to welcome you to the Ren'Py tutorial."
+    e "You find yourself in a strange unknown land."
 
     show eileen happy
 
-    e "In this tutorial, we'll teach you the basics of Ren'Py, so you can make games of your own. We'll also demonstrate many features, so you can see what Ren'Py is capable of."
+    e "How did you get here?"
 
 label tutorials:
 
@@ -151,9 +151,9 @@ label tutorials:
     with move
 
     if tutorials_first_time:
-        $ e(_("What would you like to see?"), interact=False)
+        $ e(_("What would you like to do?"), interact=False)
     else:
-        $ e(_("Is there anything else you'd like to see?"), interact=False)
+        $ e(_("Is there anything else you'd like to do?"), interact=False)
 
     $ tutorials_first_time = False
     $ renpy.choice_for_skipping()
@@ -188,19 +188,7 @@ label end:
     show _finale behind eileen
 
 
-    e "Thank you for viewing this tutorial."
-
-    e "If you'd like to see a full Ren'Py game, select \"The Question\" in the launcher."
-
-    e "You can download new versions of Ren'Py from {a=https://www.renpy.org/}https://www.renpy.org/{/a}. For help and discussion, check out the {a=https://lemmasoft.renai.us/forums/}Lemma Soft Forums{/a}."
-
-    e "We'd like to thank Piroshki for contributing my sprites; Mugenjohncel for Lucy, the band, and drawn backgrounds; and Jake for the magic circle."
-
-    e "The background music is \"Sunflower Slow Drag\", by Scott Joplin and Scott Hayden, performed by the United States Marine Band. The concert music is by Alessio."
-
-    show eileen vhappy
-
-    e "We look forward to seeing what you create with Ren'Py. Have fun!"
+    e "You choose to go back to sleep, with many questions unanswered."
 
     window hide
 

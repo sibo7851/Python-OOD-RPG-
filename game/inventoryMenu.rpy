@@ -22,7 +22,7 @@ init python:
     # A list of section and tutorial objects.
     itemmenus = [ ]
 
-    class Section(object):
+    class TitleSection(object):
         """
         Represents a section of the tutorial menu.
 
@@ -61,11 +61,13 @@ init python:
 
             itemmenus.append(self)
 
+    TitleSection(_("Items"))
 
-    Section(_("Weapons"))
+    def rebuildItemMenu():
+        for i in set(inventory.getItems()):
+            itemmenu("itemText", _(i.itemName+" ("+str(inventory.countItem(i))+")"),i)
 
-    for i in set(inventory.getItems()):
-        itemmenu("itemText", _(i.itemName+" ("+str(inventory.countItem(i))+")"),i)
+    rebuildItemMenu()
 
 
 
@@ -137,13 +139,16 @@ label itemText:
      
      "Use [iName].":
          "you used [iName]."
+         $inventory.removeItem(gItem)
+         $itemmenus=[]
+         $rebuildItemMenu()
 
      "Dont Use":
          "Don't need to use that right now"
 
 label after_menu:
 
-     "After having my drink, I got on with my morning."
+     "What should I do next?"
 
     # Returning from the top level quits the game.
 return
