@@ -2,7 +2,7 @@ init python:
     import os
     from Python import itemFactory
     from Python import inventory
-    from python import item
+    from Python import item
     
     inventory=inventory.createTestInventory()
 

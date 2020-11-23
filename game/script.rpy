@@ -12,6 +12,20 @@
 define e = Character("Eileen")
 
 init python:
+    from pydblite import pydblite
+
+    def DBTest():
+        db = pydblite.Base('dummy.pdl')
+        db.path="dummy.pdl"
+        # create new base with field names
+        db.create('name', 'age', 'size')
+        # insert new record
+        db.insert(name='homer', age=23, size=1.84)
+        # records are dictionaries with a unique integer key __id__
+        # simple selection by field value
+        records = db(name="homer")
+        # complex selection by list comprehension
+        db.commit()
 
     # A list of section and tutorial objects.
     tutorials = [ ]
@@ -122,6 +136,8 @@ label start:
     #play music "sunflower-slow-drag.ogg"
 
     window show
+
+    #$jones=DBTest()
 
     e "Hi! My name is Eileen, and I'd like to welcome you to the Ren'Py tutorial."
 
