@@ -1,4 +1,5 @@
 from itemFactory import *
+from random import randint
 
 class inventory(object):
 	itemArray=[]
@@ -28,3 +29,17 @@ def createTestInventory():
 	I.addItem(O)
 	I.addItem(O)
 	return I
+
+def findRandomItem():
+	f = Factory("Consumable") 
+	X=Stats()
+	X.attack=10
+	i =("curing",X)
+	rando=randint(0,100)
+	if rando>90:
+		O=LegendaryDecorator(f.objectify(i))
+	elif rando>50:
+		O=UltraRareDecorator(f.objectify(i))
+	else:
+		O=RareDecorator(f.objectify(i))
+	return O

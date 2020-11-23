@@ -1,70 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 173, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 173, in <module>
-    $ ui.interact()
-  File "renpy/common/00action_file.rpy", line 372, in __call__
-    renpy.save(fn, extra_info=save_name)
-PicklingError: Can't pickle <class 'store.Section'>: it's not the same object as store.Section
+  File "game/script.rpy", line 189, in script call
+    call expression tutorial.label from _call_expression
+  File "game/wander.rpy", line 13, in script
+    $foundItem=inventory.findRandomItem()
+  File "game/wander.rpy", line 13, in <module>
+    $foundItem=inventory.findRandomItem()
+TypeError: randint() takes exactly 3 arguments (2 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 173, in script
-    $ ui.interact()
+  File "game/script.rpy", line 189, in script call
+    call expression tutorial.label from _call_expression
+  File "game/wander.rpy", line 13, in script
+    $foundItem=inventory.findRandomItem()
   File "/Applications/renpy-7.3.5-sdk/renpy/ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "renpy/common/00gamemenu.rpy", line 173, in <module>
-    $ ui.interact()
-  File "/Applications/renpy-7.3.5-sdk/renpy/ui.py", line 297, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/core.py", line 3518, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 998, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/transition.py", line 47, in event
-    return self.new_widget.event(ev, x, y, st)  # E1101
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 998, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 998, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/screen.py", line 714, in event
-    rv = self.child.event(ev, x, y, st)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 998, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 244, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 998, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 244, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 998, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/layout.py", line 244, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/behavior.py", line 962, in event
-    return handle_click(self.clicked)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/behavior.py", line 897, in handle_click
-    rv = run(action)
-  File "/Applications/renpy-7.3.5-sdk/renpy/display/behavior.py", line 320, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00action_file.rpy", line 372, in __call__
-    renpy.save(fn, extra_info=save_name)
-  File "/Applications/renpy-7.3.5-sdk/renpy/loadsave.py", line 419, in save
-    six.reraise(t, e, tb)
-  File "/Applications/renpy-7.3.5-sdk/renpy/loadsave.py", line 405, in save
-    dump((roots, renpy.game.log), logf)
-  File "/Applications/renpy-7.3.5-sdk/renpy/loadsave.py", line 49, in dump
-    cPickle.dump(o, f, cPickle.HIGHEST_PROTOCOL)
-PicklingError: Can't pickle <class 'store.Section'>: it's not the same object as store.Section
+  File "game/wander.rpy", line 13, in <module>
+    $foundItem=inventory.findRandomItem()
+  File "Python/inventory.py", line 38, in findRandomItem
+TypeError: randint() takes exactly 3 arguments (2 given)
 
 Darwin-19.6.0-x86_64-i386-64bit
 Ren'Py 7.3.5.606
 Gates of Galloo 1.0
-Mon Nov 23 09:57:41 2020
+Mon Nov 23 11:37:10 2020

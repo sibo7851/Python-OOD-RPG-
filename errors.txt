@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/inventoryMenu.rpy", line 140: expected statement.
-    inventory.removeItem(gItem)
-                               ^
+File "game/wander.rpy", line 2: Tab characters are not allowed in Ren'Py scripts.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 23 09:05:01 2020
+Mon Nov 23 11:34:49 2020

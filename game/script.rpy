@@ -13,6 +13,19 @@ define e = Character("Eileen")
 
 init python:
     from pydblite import pydblite
+    
+    from Python import itemFactory
+    from Python import inventory
+    from Python import item
+    from Python import character
+
+    global Player
+    Player=character.RPGCharacter()
+    Player.inventory=inventory.createTestInventory()
+
+
+
+    
 
     def DBTest():
         db = pydblite.Base('/Users/Sid/Documents/RenProject/Gates of Galloo/dummy.pdl')
@@ -123,6 +136,7 @@ default tutorials_adjustment = ui.adjustment()
 # True if this is the first time through the tutorials.
 default tutorials_first_time = True
 
+
 # The game starts here.
 #begin start
 label start:
@@ -138,6 +152,7 @@ label start:
     window show
 
     $jones=mathFunction()
+
 
     e "You find yourself in a strange unknown land."
 

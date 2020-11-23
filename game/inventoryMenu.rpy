@@ -1,10 +1,11 @@
 init python:
     import os
+
     from Python import itemFactory
     from Python import inventory
     from Python import item
     
-    inventory=inventory.createTestInventory()
+    bag=inventory.createTestInventory()
 
     gItem=item.Item();
 
@@ -64,8 +65,8 @@ init python:
     TitleSection(_("Items"))
 
     def rebuildItemMenu():
-        for i in set(inventory.getItems()):
-            itemmenu("itemText", _(i.itemName+" ("+str(inventory.countItem(i))+")"),i)
+        for i in set(bag.getItems()):
+            itemmenu("itemText", _(i.itemName+" ("+str(bag.countItem(i))+")"),i)
 
     rebuildItemMenu()
 
@@ -119,6 +120,9 @@ screen itemmenus(adj):
 #begin start
 
 label inventoryMenu:
+    $bag=Player.inventory
+    $itemmenus=[]
+    $rebuildItemMenu()
 
     call screen itemmenus(adj=tutorials_adjustment)
 
@@ -139,7 +143,7 @@ label itemText:
      
      "Use [iName].":
          "you used [iName]."
-         $inventory.removeItem(gItem)
+         $Player.inventory.removeItem(gItem)
          $itemmenus=[]
          $rebuildItemMenu()
 
