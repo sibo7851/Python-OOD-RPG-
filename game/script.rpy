@@ -9,7 +9,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define pov = Character("[povname]")
+define e = Character("A Strange Voice")
 
 init python:
     from pydblite import pydblite
@@ -21,11 +22,7 @@ init python:
 
     global Player
     Player=character.RPGCharacter()
-    Player.inventory=inventory.createTestInventory()
-
-
-
-    
+        
 
     def DBTest():
         db = pydblite.Base('/Users/Sid/Documents/RenProject/Gates of Galloo/dummy.pdl')
@@ -87,6 +84,8 @@ init python:
 
     Tutorial("inventoryMenu", _("Open Inventory"))
 
+    Tutorial("characterDetails", _("Character Information"))
+
 
 screen tutorials(adj):
 
@@ -141,8 +140,8 @@ default tutorials_first_time = True
 #begin start
 label start:
 #end start
-
-    scene bg washington
+    image bg cubg = LiveTile("cubg.jpeg")
+    scene bg cubg
     show eileen vhappy
     with dissolve
 
@@ -156,9 +155,19 @@ label start:
 
     e "You find yourself in a strange unknown land."
 
-    show eileen happy
+    e "Who are you?"
 
-    e "How did you get here?"
+    python:
+        povname = renpy.input("What is your name?")
+        povname = povname.strip()
+
+        if not povname:
+             povname = "Jeff Bridges"
+
+    e "[povname]!"
+
+    jump characterSetup
+
 
 label tutorials:
 

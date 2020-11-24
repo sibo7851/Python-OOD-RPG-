@@ -1,31 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 189, in script call
-    call expression tutorial.label from _call_expression
-  File "game/wander.rpy", line 13, in script
-    $foundItem=inventory.findRandomItem()
-  File "game/wander.rpy", line 13, in <module>
-    $foundItem=inventory.findRandomItem()
-TypeError: randint() takes exactly 3 arguments (2 given)
+  File "game/script.rpy", line 200, in script
+    if tutorial.move_after:
+  File "game/script.rpy", line 200, in <module>
+    if tutorial.move_after:
+AttributeError: 'bool' object has no attribute 'move_after'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 189, in script call
-    call expression tutorial.label from _call_expression
-  File "game/wander.rpy", line 13, in script
-    $foundItem=inventory.findRandomItem()
-  File "/Applications/renpy-7.3.5-sdk/renpy/ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/wander.rpy", line 13, in <module>
-    $foundItem=inventory.findRandomItem()
-  File "Python/inventory.py", line 38, in findRandomItem
-TypeError: randint() takes exactly 3 arguments (2 given)
+  File "game/script.rpy", line 200, in script
+    if tutorial.move_after:
+  File "/Applications/renpy-7.3.5-sdk/renpy/ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 200, in <module>
+    if tutorial.move_after:
+AttributeError: 'bool' object has no attribute 'move_after'
 
 Darwin-19.6.0-x86_64-i386-64bit
 Ren'Py 7.3.5.606
 Gates of Galloo 1.0
-Mon Nov 23 11:37:10 2020
+Mon Nov 23 22:16:34 2020
