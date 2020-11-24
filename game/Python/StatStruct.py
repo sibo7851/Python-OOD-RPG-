@@ -19,3 +19,13 @@ class Stats(object):
 		self.currentMagic=self.currentMagic*other
 		self.money=self.money*other
 		return self
+
+	def initPlayerStats(self):
+		self.attack=1
+		self.defense=1
+		self.speed=1
+		self.maxHealth=1
+		self.currentHealth=1
+		self.maxMagic=1
+		self.currentMagic=1
+		self.money=0.0

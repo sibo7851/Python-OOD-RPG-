@@ -2,6 +2,7 @@ from inventory import *
 from controller import *
 from StatStruct import *
 from ledger import *
+from command import *
 
 #implement strategy pattern for character types
 
@@ -15,27 +16,37 @@ class RPGCharacter(object):
 		self.ledger=ledger()
 		self.stats.money=0.0
 
-class Athletic(RPGCharacter):
+class Athletic(RPGCharacter,Receiver):
 	def __init__(self): 
 		super(Athletic,self).__init__()
 		self.characterType="Athletic Major"
+		self.stats.initPlayerStats()
 		self.stats.attack=self.stats.attack+3
 
-class Engineer(RPGCharacter):
+class Engineer(RPGCharacter,Receiver):
 	def __init__(self): 
 		super(Engineer,self).__init__()
 		self.characterType="Engineering Major"
+		self.stats.initPlayerStats()
 		self.stats.maxMagic=self.stats.maxMagic+3
 
-class Art(RPGCharacter):
+class Art(RPGCharacter,Receiver):
 	def __init__(self): 
 		super(Art,self).__init__()
 		self.characterType="Art Major"
+		self.stats.initPlayerStats()
 		self.stats.defense=self.stats.defense+3
 
-class History(RPGCharacter):
+class History(RPGCharacter,Receiver):
 	def __init__(self): 
 		super(History,self).__init__()
 		self.characterType="History Major"
+		self.stats.initPlayerStats()
 		self.stats.maxHealth=self.stats.maxHealth+3
+
+class Professor(RPGCharacter,Receiver):
+	def __init__(self): 
+		super(Professor,self).__init__()
+		self.stats=self.stats*3
+
 

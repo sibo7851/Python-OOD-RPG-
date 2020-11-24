@@ -20,6 +20,7 @@ init python:
     from Python import item
     from Python import character
     from Python import millify
+    from Python import command
 
     global Player
     Player=character.RPGCharacter()
@@ -163,6 +164,9 @@ default tutorials_first_time = True
 #begin start
 label start:
 #end start
+    $BattleController=command.Controller()
+    $AICommand=command.simpleCommand()
+    $PlayerCommand=command.simpleCommand()
     image chip = "chip.png"
     image bg cubg = LiveTile("cubg.jpeg")
     scene bg cubg

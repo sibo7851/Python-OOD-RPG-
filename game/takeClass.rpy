@@ -11,6 +11,13 @@ label takeClass:
     image bg cuclass = LiveTile("cuclass.jpg")
     scene bg cuclass
     show prof
+
+    p "You payed $1k to take a class"
+
+    $Prof=character.Professor()
+    $BattleController.cmdOne=AICommand
+
+
     $randCred=randint(3,5)
     p "You payed $1k for [randCred] credits"
     p "Today you learned"
