@@ -19,6 +19,7 @@ init python:
     from Python import inventory
     from Python import item
     from Python import character
+    from Python import millify
 
     global Player
     Player=character.RPGCharacter()
@@ -80,11 +81,33 @@ init python:
 
     Section(_("What would you like to do?"))
 
+    Tutorial("takeClass", _("Take A Class"))
+
     Tutorial("wander", _("Wander Around"))
 
     Tutorial("inventoryMenu", _("Open Inventory"))
 
     Tutorial("characterDetails", _("Character Information"))
+
+
+transform alpha_dissolve:
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0
+    # This is to fade the bar in and out, and is only required once in your script
+
+screen countdown:
+    timer 1 repeat True action If(time<=100.0, true=SetVariable('time', Player.stats.money + interest), false=[Hide('countdown'), Jump(timer_jump)])
+    $Player.stats.money=Player.stats.money+interest
+    if time <= 0:
+        text "$"+millify.millify(time, precision=2)+" debt accrued" xpos .01 ypos .01 color "#FF0000" at alpha_dissolve
+    else:
+        text "$"+millify.millify(time, precision=2)+" debt accrued" xpos .01 ypos .01 at alpha_dissolve
+
+screen creditCount:
+    timer 1 repeat True action If(True,true=SetVariable('credits', Player.stats.credits),false=SetVariable('time', time + interest))
+    text str(credits)+" credits" xpos .9 ypos .01 color "#FFFFFF" at alpha_dissolve
 
 
 screen tutorials(adj):
@@ -140,10 +163,15 @@ default tutorials_first_time = True
 #begin start
 label start:
 #end start
+    image chip = "chip.png"
     image bg cubg = LiveTile("cubg.jpeg")
     scene bg cubg
-    show eileen vhappy
+    show chip
     with dissolve
+    $credits=Player.stats.credits
+    $time = 0.0
+    $timer_range = 0.0
+    $timer_jump = tutorials
 
     # Start the background music playing.
     #play music "sunflower-slow-drag.ogg"
@@ -153,12 +181,12 @@ label start:
     $jones=mathFunction()
 
 
-    e "You find yourself in a strange unknown land."
+    e "Welcome to Mountain Public University!"
 
-    e "Who are you?"
+    e "Aren't you excited to be here?"
 
     python:
-        povname = renpy.input("What is your name?")
+        povname = renpy.input("Would you please tell me your name?")
         povname = povname.strip()
 
         if not povname:
@@ -170,8 +198,14 @@ label start:
 
 
 label tutorials:
+    scene bg cubg
+    show chip at left
+    $time = Player.stats.money
+    $interest=Player.stats.money*.01
+    show screen countdown
+    show screen creditCount
 
-    show eileen happy at left
+    show chip at left
     with move
 
     if tutorials_first_time:
@@ -190,7 +224,7 @@ label tutorials:
         jump end
 
     if tutorial.move_before:
-        show eileen happy at center
+        show chip at center
         with move
 
     #$ reset_example()
@@ -199,17 +233,17 @@ label tutorials:
 
     if tutorial.move_after:
         hide example
-        show eileen happy at left
+        show chip at left
         with move
 
     jump tutorials
 
 label end:
 
-    show eileen happy at center
+    show chip at center
     with move
 
-    show _finale behind eileen
+    show _finale behind chip
 
 
     e "You choose to go back to sleep, with many questions unanswered."

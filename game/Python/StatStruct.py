@@ -8,6 +8,7 @@ class Stats(object):
 	currentMagic=0
 	statusEffect=[]
 	money=0
+	credits=0
 	def __mul__(self, other): 
 		self.attack=self.attack*other
 		self.defense=self.defense*other

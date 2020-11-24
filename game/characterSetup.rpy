@@ -24,25 +24,30 @@ label characterSetup:
 
     label post_menu:
 
-        "Great, now select your job"
+        "Great, now select your major"
     menu:
         "What should I do?"
 
-        "Biker":
-            $Player=character.Biker()
+        "Athletic":
+            $Player=character.Athletic()
 
-        "Scientist":
-            $Player=character.Scientist()
+        "Engineering":
+            $Player=character.Engineer()
 
-        "Yuppie":
-            $Player=character.Yuppie()
+        "Art":
+            $Player=character.Art()
 
-        "Priest":
-            $Player=character.Priest()
+        "History":
+            $Player=character.History()
 
     $Player.name=povname
 
     "Now that we've gotten that out of the way..."
+    e "You should probably add some classes, they will help you build your stats, but each one will cost you per credit."
+    e "In order to graduate you're going to need to take 150 credits."
+    e "You'll find that it's really easy to spend money here at Mountain Public University, so it's a good thing you have a credit card with no limit!"
+    e "Your goal is to find a way to graduate with the least amount of debt possible!"
+
 
     jump tutorials
 
