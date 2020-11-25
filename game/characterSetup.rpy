@@ -42,6 +42,15 @@ label characterSetup:
 
     $Player.name=povname
 
+    $PlayerCommand1=command.ComplexCommand(Player,True)
+    $PlayerCommand2=command.ComplexCommand(Player,False)
+    $PlayerController=command.Controller()
+    $PlayerController.cmdOne=PlayerCommand1
+    $PlayerController.cmdTwo=PlayerCommand2
+    $AIController=command.Controller()
+    $AIController.cmdOne=AICommand
+    $BattleController=command.Controller()
+
     "Now that we've gotten that out of the way..."
     e "You should probably add some classes, they will help you build your stats, but each one will cost you per credit."
     e "In order to graduate you're going to need to take 150 credits."

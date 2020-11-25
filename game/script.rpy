@@ -164,9 +164,13 @@ default tutorials_first_time = True
 #begin start
 label start:
 #end start
-    $BattleController=command.Controller()
+    
     $AICommand=command.simpleCommand()
-    $PlayerCommand=command.simpleCommand()
+
+    $AIController=command.Controller()
+    $AIController.cmdOne=AICommand
+    $BattleController=command.Controller()
+
     image chip = "chip.png"
     image bg cubg = LiveTile("cubg.jpeg")
     scene bg cubg

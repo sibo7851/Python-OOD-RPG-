@@ -146,6 +146,7 @@ label itemText:
          $Player.inventory.removeItem(gItem)
          $itemmenus=[]
          $rebuildItemMenu()
+         $Player.stats=Player.stats+gItem.itemStats
 
      "Dont Use":
          "Don't need to use that right now"

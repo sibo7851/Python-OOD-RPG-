@@ -1,26 +1,35 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 168, in script
-    $AICommand=command.ComplexCommand()
-  File "game/script.rpy", line 168, in <module>
-    $AICommand=command.ComplexCommand()
-TypeError: __init__() takes exactly 4 arguments (1 given)
+  File "game/script.rpy", line 240, in script call
+    call expression tutorial.label from _call_expression
+  File "game/script.rpy", line 240, in script call
+    call expression tutorial.label from _call_expression
+  File "game/inventoryMenu.rpy", line 149, in script
+    $Player.stats=Player.stats+gItem.use()
+  File "game/inventoryMenu.rpy", line 149, in <module>
+    $Player.stats=Player.stats+gItem.use()
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 168, in script
-    $AICommand=command.ComplexCommand()
+  File "game/script.rpy", line 240, in script call
+    call expression tutorial.label from _call_expression
+  File "game/script.rpy", line 240, in script call
+    call expression tutorial.label from _call_expression
+  File "game/inventoryMenu.rpy", line 149, in script
+    $Player.stats=Player.stats+gItem.use()
   File "/Applications/renpy-7.3.5-sdk/renpy/ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 168, in <module>
-    $AICommand=command.ComplexCommand()
-TypeError: __init__() takes exactly 4 arguments (1 given)
+  File "game/inventoryMenu.rpy", line 149, in <module>
+    $Player.stats=Player.stats+gItem.use()
+  File "Python/StatStruct.py", line 28, in __add__
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 
 Darwin-19.6.0-x86_64-i386-64bit
 Ren'Py 7.3.5.606
 Gates of Galloo 1.0
-Tue Nov 24 12:40:21 2020
+Wed Nov 25 11:49:59 2020

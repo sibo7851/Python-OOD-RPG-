@@ -1,33 +1,33 @@
 from StatStruct import *
 
 class Item(object):
-	itemStats=Stats()
-	itemName=""
-	classType=""
-	itemUsage=""
 	def __init__(self): 
 		self.classType="None"
+		self.itemStats=Stats()
+		self.itemName=""
+		self.classType=""
+		self.itemUsage=""
 
-	def use():
+	def use(self):
 		pass
 
 class Weapon(Item):
 	def __init__(self): 
 		itemUsage="Equip"
-	def use():
-		return itemStats
+	def use(self):
+		return self.itemStats
 
 class Consumable(Item):
 	def __init__(self): 
 		itemUsage="Use"
-	def use():
-		return itemStats
+	def use(self):
+		return self.itemStats
 
 class Resource(Item):
 	def __init__(self): 
 		itemUsage="Craft"
-	def use():
-		return itemStats
+	def use(self):
+		return self.itemStats
 
 
 class ItemDecorator(Item):

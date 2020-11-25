@@ -1,33 +1,41 @@
 
-#implementation based on GeeksforGeeks Python command implementation
+#implementation loosely based on GeeksforGeeks Python command implementation
 
 class Command(object):
     def execute(self):
         pass
 
-class Receiver():
-    def do_something(self, str):
+class Receiver(object):
+    def __init__(self):
+        self.setup="Is a reciever"
+
+    def do_something(self):
         return
 
-    def do_something_else(self, str):
+    def do_something_else(self):
         return
+
 
 class simpleCommand(Command):
     def __init__(self):
         self._reciever=None
 
+    def execute(self):
+        return None
+
 
 class ComplexCommand(Command):
 
-    def __init__(self, Receiver, a, b):
-
-        self._receiver = receiver
+    def __init__(self, Receiver, a):
+        self._receiver = Receiver
         self._a = a
-        self._b = b
+        #self._b = b
 
     def execute(self):
-        self._receiver.do_something(self._a)
-        self._receiver.do_something_else(self._b)
+        if self._a==True:
+            return self._receiver.do_something()
+        else:
+            return self._receiver.do_something_else()
 
 
 
@@ -45,7 +53,7 @@ class Controller:
     def invoke(self):
 
         if isinstance(self.cmdOne, Command):
-            self.cmdOne.execute()
+            return self.cmdOne.execute()
 
         if isinstance(self.cmdTwo, Command):
-            self.cmdTwo.execute()
+            return self.cmdTwo.execute()

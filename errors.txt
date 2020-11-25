@@ -2,9 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 102: u'SetVariable' is not a keyword argument or valid child for the screen statement.
-    SetVariable(Player.stats.money=time+interest)
-               ^
+File "game/takeClass.rpy", line 32: expected statement.
+    BattleController.cmdOne=PlayerCommand
+                           ^
+
+File "game/takeClass.rpy", line 33: expected statement.
+    BattleController.cmdTwo=AICommand
+                           ^
+
+File "game/takeClass.rpy", line 35: expected statement.
+    BattleController.cmdOne=AICommand
+                           ^
+
+File "game/takeClass.rpy", line 36: expected statement.
+    BattleController.cmdTwo=PlayerCommand
+                           ^
+
+File "game/takeClass.rpy", line 42: expected statement.
+    break
+         ^
+
+File "game/takeClass.rpy", line 44: expected statement.
+    break
+         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Nov 24 09:32:41 2020
+Wed Nov 25 09:56:47 2020

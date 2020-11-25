@@ -30,7 +30,7 @@ class ConsumableFactory:
   
     def objectify(self, param): 
         self.Item.itemStats=param[1]*10
-        self.Item.itemName="Potion of "+param[0]
+        self.Item.itemName="Bottle of "+param[0]
         self.Item.classType="Consumable"
         """change the message using translations"""
         return self.Item

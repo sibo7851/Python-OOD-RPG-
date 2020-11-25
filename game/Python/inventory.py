@@ -33,8 +33,9 @@ def createTestInventory():
 def findRandomItem():
 	f = Factory("Consumable") 
 	X=Stats()
-	X.attack=10
-	i =("curing",X)
+	X.maxHealth=5
+	X.currentHealth=5
+	i =("Adderall",X)
 	rando=randint(0,100)
 	if rando>90:
 		O=LegendaryDecorator(f.objectify(i))
