@@ -86,6 +86,8 @@ init python:
 
     Tutorial("wander", _("Wander Around"))
 
+    Tutorial("study", _("Study"))
+
     Tutorial("inventoryMenu", _("Open Inventory"))
 
     Tutorial("characterDetails", _("Character Information"))
@@ -167,9 +169,7 @@ label start:
     
     $AICommand=command.simpleCommand()
 
-    $AIController=command.Controller()
-    $AIController.cmdOne=AICommand
-    $BattleController=command.Controller()
+
 
     image chip = "chip.png"
     image bg cubg = LiveTile("cubg.jpeg")
