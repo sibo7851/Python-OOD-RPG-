@@ -3,7 +3,8 @@ init python:
     from Python import ledger
 
 label study:
-
+    image bg culib = LiveTile("norlin.jpg")
+    scene bg culib
     e "You paid for books, you owe $500"
     $Player.ledger.addBill(ledger.bill("Books",500))
     $Player.stats.money=Player.stats.money-500.0

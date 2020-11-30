@@ -10,12 +10,15 @@ define n = Character("")
 
 label takeClass:
     image prof = "professor.png"
-    image bg cuclass = LiveTile("cuclass.jpg")
+    image bg cuclass = LiveTile("cuclass.jpeg")
     scene bg cuclass
     show prof
 
     p "You payed $1k to take a class"
-    p "The professor attacks with a Final Exam!"
+    p "The professor appears!"
+
+    $Player.stats.money=Player.stats.money-1000
+    $Player.ledger.addBill(ledger.bill("Class",1000))
 
     $Prof=character.Professor()
     $AICommand=command.ComplexCommand(Prof,True)
@@ -74,8 +77,7 @@ label finishClass:
     n "You payed $1k for [randCred] credits"
     n "Today you learned"
 
-    $Player.stats.money=Player.stats.money-1000.0
-    $Player.ledger.addBill(ledger.bill("Class",1000))
+    
     $Player.stats.credits=Player.stats.credits+randCred
 
 

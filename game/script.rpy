@@ -88,6 +88,12 @@ init python:
 
     Tutorial("study", _("Study"))
 
+    Tutorial("workout", _("Work Out"))
+
+    Tutorial("eat", _("Eat"))
+
+    Tutorial("dorms", _("Sleep"))
+
     Tutorial("inventoryMenu", _("Open Inventory"))
 
     Tutorial("characterDetails", _("Character Information"))

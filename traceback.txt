@@ -1,35 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 240, in script call
+  File "game/script.rpy", line 246, in script call
     call expression tutorial.label from _call_expression
-  File "game/script.rpy", line 240, in script call
+  File "game/script.rpy", line 246, in script call
     call expression tutorial.label from _call_expression
-  File "game/inventoryMenu.rpy", line 149, in script
-    $Player.stats=Player.stats+gItem.use()
-  File "game/inventoryMenu.rpy", line 149, in <module>
-    $Player.stats=Player.stats+gItem.use()
-TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+  File "game/eat.rpy", line 13, in script
+    if Player.stats.currentHealth+3<=Player.stats.maxhealth:
+  File "game/eat.rpy", line 13, in <module>
+    if Player.stats.currentHealth+3<=Player.stats.maxhealth:
+AttributeError: 'Stats' object has no attribute 'maxhealth'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 240, in script call
+  File "game/script.rpy", line 246, in script call
     call expression tutorial.label from _call_expression
-  File "game/script.rpy", line 240, in script call
+  File "game/script.rpy", line 246, in script call
     call expression tutorial.label from _call_expression
-  File "game/inventoryMenu.rpy", line 149, in script
-    $Player.stats=Player.stats+gItem.use()
-  File "/Applications/renpy-7.3.5-sdk/renpy/ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/inventoryMenu.rpy", line 149, in <module>
-    $Player.stats=Player.stats+gItem.use()
-  File "Python/StatStruct.py", line 28, in __add__
-TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+  File "game/eat.rpy", line 13, in script
+    if Player.stats.currentHealth+3<=Player.stats.maxhealth:
+  File "/Applications/renpy-7.3.5-sdk/renpy/ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Applications/renpy-7.3.5-sdk/renpy/python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/eat.rpy", line 13, in <module>
+    if Player.stats.currentHealth+3<=Player.stats.maxhealth:
+AttributeError: 'Stats' object has no attribute 'maxhealth'
 
 Darwin-19.6.0-x86_64-i386-64bit
 Ren'Py 7.3.5.606
 Gates of Galloo 1.0
-Wed Nov 25 11:49:59 2020
+Mon Nov 30 14:23:16 2020

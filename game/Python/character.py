@@ -35,7 +35,7 @@ class Engineer(RPGCharacter):
 		self.stats.maxMagic=self.stats.maxMagic+3
 
 	def do_something(self):
-		return "You overanalyzed the question, but ultimately got it correct"
+		return "You overanalyzed the question"
 
 class Art(RPGCharacter):
 	def __init__(self): 

@@ -35,7 +35,7 @@ def findRandomItem():
 	X=Stats()
 	X.maxHealth=5
 	X.currentHealth=5
-	i =("Adderall",X)
+	i =("Energy Drink",X)
 	rando=randint(0,100)
 	if rando>90:
 		O=LegendaryDecorator(f.objectify(i))

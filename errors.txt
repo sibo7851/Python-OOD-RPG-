@@ -2,29 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/takeClass.rpy", line 32: expected statement.
-    BattleController.cmdOne=PlayerCommand
-                           ^
+File "game/eat.rpy", line 13: expected statement.
+    Player.stats.currentHealth=Player.stats.currentHealth+3.0
+                              ^
 
-File "game/takeClass.rpy", line 33: expected statement.
-    BattleController.cmdTwo=AICommand
-                           ^
-
-File "game/takeClass.rpy", line 35: expected statement.
-    BattleController.cmdOne=AICommand
-                           ^
-
-File "game/takeClass.rpy", line 36: expected statement.
-    BattleController.cmdTwo=PlayerCommand
-                           ^
-
-File "game/takeClass.rpy", line 42: expected statement.
-    break
-         ^
-
-File "game/takeClass.rpy", line 44: expected statement.
-    break
-         ^
+File "game/eat.rpy", line 15: expected statement.
+    Player.stats.currentHealth=Player.stats.maxHealth
+                              ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Nov 25 09:56:47 2020
+Mon Nov 30 14:12:44 2020
