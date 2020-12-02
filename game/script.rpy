@@ -96,7 +96,9 @@ init python:
 
     Tutorial("inventoryMenu", _("Open Inventory"))
 
-    Tutorial("characterDetails", _("Character Information"))
+    Tutorial("characterDetails", _("Character Information
+    
+    Tutorial("graduation", _("Apply for Graduation"))
 
 
 transform alpha_dissolve:
@@ -117,7 +119,10 @@ screen countdown:
 screen creditCount:
     timer 1 repeat True action If(True,true=SetVariable('credits', Player.stats.credits),false=SetVariable('time', time + interest))
     text str(credits)+" credits" xpos .9 ypos .01 color "#FFFFFF" at alpha_dissolve
-
+    
+screen health:
+    timer 1 repeat True action If(True,true=SetVariable('health', Player.stats.currentHealth), false=SetVariable('time', time + interest))
+    text str(health)+" health" xpos .9 ypos .05 color "#0000FF" at alpha_dissolve    
 
 screen tutorials(adj):
 
@@ -186,6 +191,7 @@ label start:
     $time = 0.0
     $timer_range = 0.0
     $timer_jump = tutorials
+    $health = Player.stats.currentHealth
 
     # Start the background music playing.
     #play music "sunflower-slow-drag.ogg"
@@ -218,6 +224,7 @@ label tutorials:
     $interest=Player.stats.money*.01
     show screen countdown
     show screen creditCount
+    show screen health
 
     show chip at left
     with move
