@@ -96,7 +96,7 @@ init python:
 
     Tutorial("inventoryMenu", _("Open Inventory"))
 
-    Tutorial("characterDetails", _("Character Information
+    Tutorial("characterDetails", _("Character Information"))
     
     Tutorial("graduation", _("Apply for Graduation"))
 
