@@ -1,6 +1,6 @@
 from item import *
 
-
+#this is kind of an easter egg I guess
 def jeffBridges():
 	return "The Big Lebowski"
 
@@ -62,6 +62,6 @@ def Factory(weaponType ="Consumable"):
   
     return objectFactory[weaponType]() 
 
-#below is for testing, delete when working
+
 
   
