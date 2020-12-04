@@ -23,6 +23,7 @@ class Athletic(RPGCharacter):
 		self.characterType="Athletic Major"
 		self.stats.initPlayerStats()
 		self.stats.attack=self.stats.attack+3
+		self.stats.currentHealth = 100.0
 
 	def do_something(self):
 		return "You explained that you're only in school because you got a sports scholarship"
@@ -33,6 +34,7 @@ class Engineer(RPGCharacter):
 		self.characterType="Engineering Major"
 		self.stats.initPlayerStats()
 		self.stats.maxMagic=self.stats.maxMagic+3
+		self.stats.currentHealth = 90.0
 
 	def do_something(self):
 		return "You overanalyzed the question"
@@ -43,6 +45,8 @@ class Art(RPGCharacter):
 		self.characterType="Art Major"
 		self.stats.initPlayerStats()
 		self.stats.defense=self.stats.defense+3
+		self.stats.currentHealth = 60.0
+		
 	def do_something(self):
 		return "You doodled on your work"
 
@@ -52,6 +56,8 @@ class History(RPGCharacter):
 		self.characterType="History Major"
 		self.stats.initPlayerStats()
 		self.stats.maxHealth=self.stats.maxHealth+3
+		self.stats.currentHealth = 80.0
+		
 	def do_something(self):
 		return "You remembered."
 

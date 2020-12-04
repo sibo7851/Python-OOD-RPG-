@@ -11,6 +11,7 @@ class Stats(object):
 	statusEffect=[]
 	money=0.0
 	credits=0.0
+	#overrides for multiplication and addition for applying single operations across all states.
 	def __mul__(self, other): 
 		self.attack=self.attack*other
 		self.defense=self.defense*other
@@ -36,7 +37,7 @@ class Stats(object):
 		self.evasion=self.evasion+other.evasion
 		self.money=self.money+other.money
 		return self
-
+	#player stats are initialized to 1.0 while item stats initialize to zero, this is intentional
 	def initPlayerStats(self):
 		self.attack=1.0
 		self.defense=1.0

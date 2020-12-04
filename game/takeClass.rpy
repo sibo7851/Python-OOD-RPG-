@@ -35,6 +35,8 @@ label takeClass:
 
             "Give Up":
                 $Choice=2
+                e "You don't feel ready for this class yet"
+                jump tutorials
 
         $BattleController.cmdOne=AIController.cmdOne
         $BattleController.cmdTwo=PlayerController.cmdOne
@@ -77,7 +79,7 @@ label finishClass:
     n "You payed $1k for [randCred] credits"
     n "Today you learned"
 
-    
+
     $Player.stats.credits=Player.stats.credits+randCred
 
 
