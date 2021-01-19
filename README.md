@@ -1,4 +1,4 @@
-# OODFinalProject
+# Python OOD-RPG
 
 Sid Bostwick
 Jackson Lee
